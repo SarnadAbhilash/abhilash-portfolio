@@ -7,24 +7,22 @@
   <meta name="description" content="ML Engineer specializing in LLM safety, inference optimization, and RLHF pipelines." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #0c0a09;
-      --surface:   #141210;
-      --surface-2: #1c1917;
-      --border:    #292524;
-      --border-h:  #44403c;
-      --text:      #fafaf9;
-      --muted:     #78716c;
-      --muted-2:   #57534e;
-      --orange:    #f97316;
-      --orange-l:  #fb923c;
-      --orange-d:  #ea6c0a;
+      --bg:        #0f0f0f;
+      --surface:   #161616;
+      --surface-2: #1e1e1e;
+      --border:    #2a2a2a;
+      --border-h:  #3a3a3a;
+      --text:      #f5f5f5;
+      --muted:     #737373;
+      --muted-2:   #525252;
+      --cyan:      #22d3ee;
+      --cyan-l:    #38bdf8;
       --mono:      'JetBrains Mono', monospace;
-      --sans:      'Inter', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -32,7 +30,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: var(--sans);
+      font-family: var(--mono);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -40,14 +38,13 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* subtle warm grid */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.014) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px);
       background-size: 64px 64px;
       pointer-events: none;
       z-index: 0;
@@ -62,7 +59,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1rem 2rem;
-      background: rgba(12,10,9,.92);
+      background: rgba(15,15,15,.92);
       border-bottom: 1px solid var(--border);
     }
 
@@ -72,7 +69,7 @@
       font-weight: 600;
       color: var(--text);
     }
-    .nav-logo span { color: var(--orange); }
+    .nav-logo span { color: var(--cyan); }
 
     .nav-links {
       display: flex;
@@ -82,7 +79,7 @@
 
     .nav-links a {
       font-size: .82rem;
-      font-weight: 500;
+      font-weight: 400;
       color: var(--muted);
       letter-spacing: .02em;
       transition: color .15s;
@@ -92,14 +89,14 @@
     .nav-cta {
       font-family: var(--mono);
       font-size: .78rem;
-      font-weight: 600;
+      font-weight: 500;
       padding: .45rem 1rem;
-      border: 1px solid var(--orange);
-      color: var(--orange);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
       letter-spacing: .04em;
       transition: background .15s, color .15s;
     }
-    .nav-cta:hover { background: var(--orange); color: #fff; }
+    .nav-cta:hover { background: var(--cyan); color: #000; }
 
     /* ── Sections ─────────────────────────────────────────── */
     section {
@@ -113,8 +110,8 @@
     .section-eyebrow {
       font-family: var(--mono);
       font-size: .72rem;
-      font-weight: 600;
-      color: var(--orange);
+      font-weight: 500;
+      color: var(--cyan);
       letter-spacing: .14em;
       text-transform: uppercase;
       margin-bottom: .75rem;
@@ -122,15 +119,15 @@
 
     .section-title {
       font-size: clamp(1.75rem, 3.5vw, 2.6rem);
-      font-weight: 800;
-      letter-spacing: -.035em;
+      font-weight: 700;
+      letter-spacing: -.02em;
       line-height: 1.1;
       margin-bottom: .6rem;
     }
 
     .section-sub {
       color: var(--muted);
-      font-size: .95rem;
+      font-size: .9rem;
       max-width: 500px;
     }
 
@@ -164,7 +161,7 @@
       gap: .5rem;
       font-family: var(--mono);
       font-size: .72rem;
-      font-weight: 500;
+      font-weight: 400;
       color: var(--muted);
       letter-spacing: .06em;
       text-transform: uppercase;
@@ -184,13 +181,13 @@
 
     .hero-name {
       font-size: clamp(2.8rem, 7vw, 5.5rem);
-      font-weight: 900;
-      letter-spacing: -.045em;
+      font-weight: 700;
+      letter-spacing: -.03em;
       line-height: .95;
       margin-bottom: .4em;
     }
 
-    .hero-name .orange { color: var(--orange); }
+    .hero-name .cyan { color: var(--cyan); }
 
     .hero-title {
       font-family: var(--mono);
@@ -202,7 +199,7 @@
     .cursor {
       display: inline-block;
       width: 2px; height: 1em;
-      background: var(--orange);
+      background: var(--cyan);
       vertical-align: text-bottom;
       animation: blink .7s step-end infinite;
     }
@@ -210,7 +207,7 @@
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
     .hero-desc {
-      font-size: .95rem;
+      font-size: .9rem;
       color: var(--muted);
       max-width: 500px;
       line-height: 1.75;
@@ -224,9 +221,7 @@
     }
 
     /* Photo */
-    .hero-photo-wrap {
-      flex-shrink: 0;
-    }
+    .hero-photo-wrap { flex-shrink: 0; }
 
     .hero-photo {
       width: 220px;
@@ -258,18 +253,18 @@
       gap: .45rem;
       font-family: var(--mono);
       font-size: .8rem;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: .04em;
       padding: .65rem 1.4rem;
       transition: all .15s;
     }
 
-    .btn-orange {
-      background: var(--orange);
-      color: #fff;
-      border: 1px solid var(--orange);
+    .btn-cyan {
+      background: var(--cyan);
+      color: #000;
+      border: 1px solid var(--cyan);
     }
-    .btn-orange:hover { background: var(--orange-l); border-color: var(--orange-l); }
+    .btn-cyan:hover { background: var(--cyan-l); border-color: var(--cyan-l); }
 
     .btn-outline {
       background: transparent;
@@ -289,7 +284,7 @@
     .about-text p {
       color: var(--muted);
       margin-bottom: 1rem;
-      font-size: .95rem;
+      font-size: .9rem;
       line-height: 1.75;
     }
 
@@ -309,8 +304,8 @@
 
     .stat-num {
       font-size: 2.25rem;
-      font-weight: 900;
-      color: var(--orange);
+      font-weight: 700;
+      color: var(--cyan);
       letter-spacing: -.04em;
       line-height: 1;
       margin-bottom: .3rem;
@@ -344,7 +339,7 @@
 
     .skill-group-title {
       font-size: .78rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--text);
       margin-bottom: .75rem;
       letter-spacing: .02em;
@@ -394,7 +389,7 @@
       font-family: var(--mono);
       font-size: .65rem;
       font-weight: 600;
-      color: var(--orange);
+      color: var(--cyan);
       letter-spacing: .12em;
       text-transform: uppercase;
       margin-bottom: .6rem;
@@ -423,10 +418,10 @@
 
     .project-name {
       font-size: .95rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--text);
       margin-bottom: .5rem;
-      letter-spacing: -.015em;
+      letter-spacing: -.01em;
     }
 
     .project-desc {
@@ -453,9 +448,9 @@
       font-family: var(--mono);
       font-size: .62rem;
       padding: .15rem .45rem;
-      border: 1px solid rgba(249,115,22,.3);
-      color: var(--orange-l);
-      background: rgba(249,115,22,.06);
+      border: 1px solid rgba(34,211,238,.25);
+      color: var(--cyan-l);
+      background: rgba(34,211,238,.05);
     }
 
     .lang {
@@ -489,19 +484,19 @@
       left: -2.375rem;
       top: .45rem;
       width: 8px; height: 8px;
-      background: var(--orange);
+      background: var(--cyan);
       border: 2px solid var(--bg);
     }
 
     .tl-date {
       font-family: var(--mono);
       font-size: .7rem;
-      color: var(--orange);
+      color: var(--cyan);
       letter-spacing: .06em;
       margin-bottom: .25rem;
     }
 
-    .tl-role { font-size: 1rem; font-weight: 700; margin-bottom: .1rem; letter-spacing: -.02em; }
+    .tl-role { font-size: 1rem; font-weight: 600; margin-bottom: .1rem; letter-spacing: -.01em; }
 
     .tl-company { font-size: .82rem; color: var(--muted); margin-bottom: .75rem; }
 
@@ -516,7 +511,7 @@
       line-height: 1.6;
     }
 
-    .tl-points li::before { content: '—'; position: absolute; left: 0; color: var(--orange); }
+    .tl-points li::before { content: '—'; position: absolute; left: 0; color: var(--cyan); }
 
     /* ── Contact ──────────────────────────────────────────── */
     #contact { text-align: center; }
@@ -545,14 +540,14 @@
       gap: .5rem;
       font-family: var(--mono);
       font-size: .75rem;
-      font-weight: 500;
+      font-weight: 400;
       padding: .55rem 1.1rem;
       border: 1px solid var(--border);
       color: var(--muted);
       letter-spacing: .02em;
       transition: border-color .15s, color .15s;
     }
-    .social-link:hover { border-color: var(--text); color: var(--text); }
+    .social-link:hover { border-color: var(--cyan); color: var(--cyan); }
 
     /* ── Footer ───────────────────────────────────────────── */
     footer {
@@ -567,7 +562,7 @@
       letter-spacing: .04em;
     }
 
-    footer span { color: var(--orange); }
+    footer span { color: var(--cyan); }
 
     /* ── Fade-in ──────────────────────────────────────────── */
     .fade {
@@ -603,13 +598,13 @@
   <nav>
     <div class="nav-logo">abhilash<span>.</span>dev</div>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#contact">contact</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">get in contact →</a>
+    <a href="#contact" class="nav-cta">get in touch →</a>
   </nav>
 
   <!-- Hero -->
@@ -618,10 +613,10 @@
       <div class="hero-inner">
         <div class="hero-badge">
           <span class="dot"></span>
-          Open to senior ML roles
+          open to senior ML roles
         </div>
         <h1 class="hero-name">
-          Abhilash<br /><span class="orange">Sarnad</span>
+          Abhilash<br /><span class="cyan">Sarnad</span>
         </h1>
         <p class="hero-title">
           &gt;&nbsp;<span id="typed"></span><span class="cursor"></span>
@@ -632,7 +627,7 @@
           LLM monitors.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-orange">view projects →</a>
+          <a href="#projects" class="btn btn-cyan">view projects →</a>
           <a href="https://github.com/SarnadAbhilash" target="_blank" rel="noopener" class="btn btn-outline">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             github
@@ -650,8 +645,8 @@
 
   <!-- About -->
   <section id="about">
-    <p class="section-eyebrow">01 / About</p>
-    <h2 class="section-title">Who I Am</h2>
+    <p class="section-eyebrow">01 / about</p>
+    <h2 class="section-title">who i am</h2>
     <div style="height:2.5rem"></div>
     <div class="about-grid">
       <div class="about-text fade">
@@ -699,8 +694,8 @@
 
   <!-- Skills -->
   <section id="skills">
-    <p class="section-eyebrow">02 / Skills</p>
-    <h2 class="section-title">Technical Stack</h2>
+    <p class="section-eyebrow">02 / skills</p>
+    <h2 class="section-title">technical stack</h2>
     <p class="section-sub">The tools I use to take ML from idea to production.</p>
     <div class="skills-grid">
       <div class="skill-group fade">
@@ -763,14 +758,14 @@
 
   <!-- Projects -->
   <section id="projects">
-    <p class="section-eyebrow">03 / Projects</p>
-    <h2 class="section-title">Pinned Projects</h2>
+    <p class="section-eyebrow">03 / projects</p>
+    <h2 class="section-title">pinned projects</h2>
     <p class="section-sub">Open-source work spanning LLM safety, inference, training, and reasoning.</p>
     <div class="projects-grid">
 
       <div class="project-card featured fade">
         <div class="project-body">
-          <span class="featured-label">★ Featured</span>
+          <span class="featured-label">★ featured</span>
           <div class="project-header">
             <span class="project-icon">🚀</span>
             <a href="https://github.com/SarnadAbhilash/train-reason-serve" target="_blank" rel="noopener" class="project-gh">
@@ -880,8 +875,8 @@
 
   <!-- Experience -->
   <section id="experience">
-    <p class="section-eyebrow">04 / Experience</p>
-    <h2 class="section-title">Where I've Worked</h2>
+    <p class="section-eyebrow">04 / experience</p>
+    <h2 class="section-title">where i've worked</h2>
     <div class="timeline">
       <div class="tl-item fade">
         <div class="tl-date">2022 — Present</div>
@@ -912,8 +907,8 @@
 
   <!-- Contact -->
   <section id="contact">
-    <p class="section-eyebrow">05 / Contact</p>
-    <h2 class="section-title">Let's Connect</h2>
+    <p class="section-eyebrow">05 / contact</p>
+    <h2 class="section-title">let's connect</h2>
     <div class="contact-card fade">
       <p>Open to senior ML engineering roles, research collaborations, and interesting problems.</p>
       <p>Best reached via email or GitHub.</p>
@@ -931,7 +926,7 @@
   </section>
 
   <footer>
-    <p>Built with pure HTML · <span>Abhilash Sarnad</span> · 2026</p>
+    <p>built with pure html · <span>abhilash sarnad</span> · 2026</p>
   </footer>
 
   <script>
